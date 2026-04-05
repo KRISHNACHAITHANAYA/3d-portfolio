@@ -49,15 +49,6 @@ export default function About() {
                 }}
               />
 
-              {/* Rotating Border Effect */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                className="absolute -inset-4 border-2 border-transparent rounded-3xl pointer-events-none"
-                style={{
-                  borderImage: 'conic-gradient(from 0deg, #a855f7, #06b6d4, #3b82f6, #a855f7) 1',
-                }}
-              />
             </div>
           </motion.div>
 
