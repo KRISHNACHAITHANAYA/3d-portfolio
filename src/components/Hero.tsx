@@ -138,13 +138,13 @@ export default function Hero() {
               className="absolute inset-0 flex items-center justify-center"
             >
               {/* Avatar Gradient Circle */}
-              <div className="w-56 h-56 rounded-full bg-gradient-to-br from-neon-purple via-neon-blue to-neon-cyan flex items-center justify-center relative overflow-hidden"
+              <div className="w-56 h-56 rounded-full flex items-center justify-center relative overflow-hidden"
                 style={{
                   background: `conic-gradient(from 0deg, #a855f7, #06b6d4, #3b82f6, #a855f7)`,
                   boxShadow: '0 0 40px #a855f7, inset 0 0 40px rgba(168, 85, 247, 0.3)',
                 }}
               >
-                <div className="w-52 h-52 rounded-full bg-dark-base flex items-center justify-center font-orbitron text-5xl font-bold text-white shimmer"
+                <div className="w-52 h-52 rounded-full flex items-center justify-center font-orbitron text-5xl font-bold text-white shimmer"
                   style={{
                     background: `linear-gradient(135deg, #1e1b2e, #2d2639)`,
                   }}
@@ -159,8 +159,8 @@ export default function Hero() {
                   key={i}
                   className="absolute w-1 h-1 bg-neon-purple rounded-full"
                   animate={{
-                    x: Math.cos((i / 8) * Math.PI * 2) * 150,
-                    y: Math.sin((i / 8) * Math.PI * 2) * 150,
+                    x: Math.cos((i / 8) * Math.PI * 2) * 120,
+                    y: Math.sin((i / 8) * Math.PI * 2) * 120,
                   }}
                   transition={{
                     duration: 8 + i,
@@ -170,61 +170,6 @@ export default function Hero() {
                 />
               ))}
             </motion.div>
-
-            {/* Ring 1 - Clockwise */}
-            <motion.svg
-              className="absolute inset-0 w-full h-full ring-1"
-              viewBox="0 0 320 320"
-            >
-              <circle
-                cx="160"
-                cy="160"
-                r="140"
-                fill="none"
-                stroke="#a855f7"
-                strokeWidth="2"
-                opacity="0.6"
-                strokeDasharray="8,4"
-                filter="drop-shadow(0 0 10px #a855f7)"
-              />
-            </motion.svg>
-
-            {/* Ring 2 - Counter-clockwise */}
-            <motion.svg
-              className="absolute inset-0 w-full h-full ring-2"
-              viewBox="0 0 320 320"
-            >
-              <circle
-                cx="160"
-                cy="160"
-                r="110"
-                fill="none"
-                stroke="#06b6d4"
-                strokeWidth="2"
-                opacity="0.6"
-                strokeDasharray="8,4"
-                filter="drop-shadow(0 0 10px #06b6d4)"
-              />
-            </motion.svg>
-
-            {/* Ring 3 - Tilted, Clockwise */}
-            <motion.svg
-              className="absolute inset-0 w-full h-full ring-3"
-              viewBox="0 0 320 320"
-              style={{ perspective: '1000px' }}
-            >
-              <circle
-                cx="160"
-                cy="160"
-                r="170"
-                fill="none"
-                stroke="#3b82f6"
-                strokeWidth="2"
-                opacity="0.4"
-                strokeDasharray="6,3"
-                filter="drop-shadow(0 0 8px #3b82f6)"
-              />
-            </motion.svg>
           </div>
         </motion.div>
       </div>
