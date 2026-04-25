@@ -41,7 +41,7 @@ export default function About() {
 
               {/* Profile Image */}
               <img
-                src={`${import.meta.env.BASE_URL}profile.jpg`}
+                src={`${(import.meta as any).env.BASE_URL}profile.jpg`}
                 alt="Krishna Chaithanya K"
                 className="absolute inset-0 w-full h-full rounded-3xl object-cover p-1"
                 onError={(e) => {
