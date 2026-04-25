@@ -32,8 +32,8 @@ export default function About() {
             className="hidden md:flex items-center justify-center"
           >
             <div className="relative w-72 h-72">
-              {/* Neon Border Ring */}
-              <div className="absolute inset-0 border-3 border-neon-purple rounded-3xl"
+              {/* Neon Border Ring - Static */}
+              <div className="absolute inset-0 border-2 border-neon-purple rounded-3xl"
                 style={{
                   boxShadow: '0 0 30px #a855f7, inset 0 0 30px rgba(168, 85, 247, 0.2)',
                 }}
@@ -46,16 +46,6 @@ export default function About() {
                 className="absolute inset-0 w-full h-full rounded-3xl object-cover p-1"
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = 'none'
-                }}
-              />
-
-              {/* Rotating Border Effect */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                className="absolute -inset-4 border-2 border-transparent rounded-3xl pointer-events-none"
-                style={{
-                  borderImage: 'conic-gradient(from 0deg, #a855f7, #06b6d4, #3b82f6, #a855f7) 1',
                 }}
               />
             </div>

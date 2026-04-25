@@ -131,49 +131,35 @@ export default function Hero() {
           className="flex justify-center items-center relative"
         >
           <div className="relative w-80 h-80">
-            {/* Center Avatar */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              {/* Avatar Gradient Circle */}
-              <div className="w-56 h-56 rounded-full bg-gradient-to-br from-neon-purple via-neon-blue to-neon-cyan flex items-center justify-center relative overflow-hidden"
+            {/* Center Avatar - Static, no animations */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              {/* Avatar Gradient Border Circle */}
+              <div className="w-56 h-56 rounded-full flex items-center justify-center relative overflow-hidden"
                 style={{
                   background: `conic-gradient(from 0deg, #a855f7, #06b6d4, #3b82f6, #a855f7)`,
                   boxShadow: '0 0 40px #a855f7, inset 0 0 40px rgba(168, 85, 247, 0.3)',
+                  padding: '3px',
                 }}
               >
-                <div className="w-52 h-52 rounded-full bg-dark-base flex items-center justify-center font-orbitron text-5xl font-bold text-white shimmer"
-                  style={{
-                    background: `linear-gradient(135deg, #1e1b2e, #2d2639)`,
-                  }}
-                >
-                  KC
-                </div>
-              </div>
-
-              {/* Floating Particles */}
-              {[...Array(8)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-1 h-1 bg-neon-purple rounded-full"
-                  animate={{
-                    x: Math.cos((i / 8) * Math.PI * 2) * 150,
-                    y: Math.sin((i / 8) * Math.PI * 2) * 150,
-                  }}
-                  transition={{
-                    duration: 8 + i,
-                    repeat: Infinity,
-                    ease: 'linear',
+                <img
+                  src={`${import.meta.env.BASE_URL}profile.jpg`}
+                  alt="Krishna Chaithanya K"
+                  className="w-full h-full rounded-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.style.display = 'none'
+                    const parent = target.parentElement
+                    if (parent) {
+                      parent.innerHTML = `<div style="width:100%;height:100%;border-radius:9999px;background:linear-gradient(135deg,#1e1b2e,#2d2639);display:flex;align-items:center;justify-content:center;font-family:Orbitron,sans-serif;font-size:3rem;font-weight:700;color:white;">KC</div>`
+                    }
                   }}
                 />
-              ))}
-            </motion.div>
+              </div>
+            </div>
 
-            {/* Ring 1 - Clockwise */}
-            <motion.svg
-              className="absolute inset-0 w-full h-full ring-1"
+            {/* Ring 1 - Static */}
+            <svg
+              className="absolute inset-0 w-full h-full"
               viewBox="0 0 320 320"
             >
               <circle
@@ -187,11 +173,11 @@ export default function Hero() {
                 strokeDasharray="8,4"
                 filter="drop-shadow(0 0 10px #a855f7)"
               />
-            </motion.svg>
+            </svg>
 
-            {/* Ring 2 - Counter-clockwise */}
-            <motion.svg
-              className="absolute inset-0 w-full h-full ring-2"
+            {/* Ring 2 - Static */}
+            <svg
+              className="absolute inset-0 w-full h-full"
               viewBox="0 0 320 320"
             >
               <circle
@@ -205,13 +191,12 @@ export default function Hero() {
                 strokeDasharray="8,4"
                 filter="drop-shadow(0 0 10px #06b6d4)"
               />
-            </motion.svg>
+            </svg>
 
-            {/* Ring 3 - Tilted, Clockwise */}
-            <motion.svg
-              className="absolute inset-0 w-full h-full ring-3"
+            {/* Ring 3 - Static */}
+            <svg
+              className="absolute inset-0 w-full h-full"
               viewBox="0 0 320 320"
-              style={{ perspective: '1000px' }}
             >
               <circle
                 cx="160"
@@ -224,7 +209,7 @@ export default function Hero() {
                 strokeDasharray="6,3"
                 filter="drop-shadow(0 0 8px #3b82f6)"
               />
-            </motion.svg>
+            </svg>
           </div>
         </motion.div>
       </div>
